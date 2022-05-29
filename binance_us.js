@@ -12,24 +12,16 @@ const PATHS = {
 const API_KEY = process.env.BINANCE_US_API_KEY
 const API_SECRET = process.env.BINANCE_US_API_SECRET
 
-const makeQueryString = q =>
-  q
-    ? `${Object.keys(q)
-        .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(q[k])}`)
-        .join('&')}`
-    : ''
-
-
 const timestamp = Date.now()
 
 // const signature = crypto
 //       .createHmac('sha256', API_SECRET)
-//       .update(makeQueryString({ timestamp }))
+//       .update(new URLSearchParams({ timestamp }).toString())
 //       .digest('hex')
 
-const signature = cryptoJs.HmacSHA256(makeQueryString({ timestamp }), API_SECRET)
+const signature = cryptoJs.HmacSHA256(new URLSearchParams({ timestamp }).toString(), API_SECRET)
 
-const query = makeQueryString({timestamp, signature})
+const query = new URLSearchParams({ timestamp, signature }).toString()
 
 export const binance_us = async () => {
     const response = await fetch(`${BASE_URL}${PATHS.USER_ACCOUNT}?${query}`, {
