@@ -11,4 +11,8 @@ const ex = args[2]
 
 const fn = exMaps[ex]
 
+if(fn === undefined) {
+    throw new Error("Please pass a correct exchange name")
+}
+
 fn();
