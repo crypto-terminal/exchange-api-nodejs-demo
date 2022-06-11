@@ -1,9 +1,11 @@
 import 'dotenv/config'
 import { binance_us } from './binance_us.js';
+import { gemini } from "./gemini.js";
 
 const exMaps = {
-    binance_us
-}
+    binance_us,
+    gemini,
+};
 
 const args = process.argv;
 

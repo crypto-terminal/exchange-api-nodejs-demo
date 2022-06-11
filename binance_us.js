@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
-// import crypto from "crypto";
-import cryptoJs from 'crypto-js';
+import crypto from "crypto";
+// import cryptoJs from 'crypto-js';
 
 const BASE_URL = "https://api.binance.us";
 
@@ -14,12 +14,12 @@ const API_SECRET = process.env.BINANCE_US_API_SECRET
 
 const timestamp = Date.now()
 
-// const signature = crypto
-//       .createHmac('sha256', API_SECRET)
-//       .update(new URLSearchParams({ timestamp }).toString())
-//       .digest('hex')
+const signature = crypto
+    .createHmac("sha256", API_SECRET)
+    .update(new URLSearchParams({ timestamp }).toString())
+    .digest("hex");
 
-const signature = cryptoJs.HmacSHA256(new URLSearchParams({ timestamp }).toString(), API_SECRET)
+// const signature = cryptoJs.HmacSHA256(new URLSearchParams({ timestamp }).toString(), API_SECRET)
 
 const query = new URLSearchParams({ timestamp, signature }).toString()
 
