@@ -40,3 +40,23 @@ export const gemini = async () => {
     const json = await response.json();
     console.log("json :>> ", json);
 };
+
+// {
+//     account: {
+//       accountName: 'Primary',
+//       shortName: 'primary',
+//       type: 'exchange',
+//       created: '1646241859514',
+//       verificationToken: 'jwt-token'
+//     },
+//     users: [
+//       {
+//         name: 'John Doe',
+//         lastSignIn: '2022-06-11T17:14:52.549Z',
+//         status: 'Active',
+//         countryCode: 'US',
+//         isVerified: true
+//       }
+//     ],
+//     memo_reference_code: 'some-string'
+//   }
