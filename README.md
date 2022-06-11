@@ -1,4 +1,4 @@
-# Exchange API demos
+# Crypocurrency Exchange API demos
 
 
 ## Introduction
@@ -18,3 +18,7 @@ __Don't forget to star it after copying and pasting.__ Thanks!
     # node index.js <exchange name> 
     node index.js binance_us
 ```
+
+## keywords
+ - Binance US
+ - Gemini
