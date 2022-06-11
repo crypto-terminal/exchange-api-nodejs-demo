@@ -56,6 +56,7 @@ export const gemini = async () => {
     console.log("accountBalances :>> ", accountBalances);
 };
 
+// account info: 
 // {
 //     account: {
 //       accountName: 'Primary',
@@ -75,3 +76,14 @@ export const gemini = async () => {
 //     ],
 //     memo_reference_code: 'some-string'
 //   }
+
+
+// accountBalances :>>  [
+//     {
+//       type: 'exchange',
+//       currency: 'SOL',
+//       amount: '2.732824',
+//       available: '2.732824',
+//       availableForWithdrawal: '0'
+//     }
+//   ]
