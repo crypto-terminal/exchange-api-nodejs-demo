@@ -6,6 +6,7 @@ const BASE_URL = "https://api.gemini.com";
 const PATHS = {
     ACCOUNT_INFO: "/v1/account",
     ACCOUNT_BALANCES: "/v1/balances",
+    ACCOUNT_BALANCES_USD: "/v1/notionalbalances/usd",
 };
 
 const API_KEY = process.env.GEMINI_API_KEY;
@@ -35,26 +36,33 @@ const getHeaders = (path) => {
 };
 
 export const gemini = async () => {
-    const accountInfoPromise = fetch(BASE_URL + PATHS.ACCOUNT_INFO, {
-        method: "POST",
-        headers: getHeaders(PATHS.ACCOUNT_INFO),
-    });
+    // const accountInfoPromise = fetch(BASE_URL + PATHS.ACCOUNT_INFO, {
+    //     method: "POST",
+    //     headers: getHeaders(PATHS.ACCOUNT_INFO),
+    // });
 
     const accountBalancesPromise = fetch(BASE_URL + PATHS.ACCOUNT_BALANCES, {
         method: "POST",
         headers: getHeaders(PATHS.ACCOUNT_BALANCES),
     });
 
-    const [accountInfoResponse, accountBalancesResponse] = await Promise.all([
-        accountInfoPromise,
+    const accountBalancesUSDPromise = fetch(BASE_URL + PATHS.ACCOUNT_BALANCES_USD, {
+        method: "POST",
+        headers: getHeaders(PATHS.ACCOUNT_BALANCES_USD),
+    });
+
+    const [accountBalancesResponse, accountBalancesUSDResponse] = await Promise.all([
         accountBalancesPromise,
+        accountBalancesUSDPromise,
     ]);
 
-    const accountInfo = await accountInfoResponse.json();
+    // const accountInfo = await accountInfoResponse.json();
     const accountBalances = await accountBalancesResponse.json();
-    console.log("accountInfo :>> ", accountInfo);
+    const accountBalancesUSD = await accountBalancesUSDResponse.json();
+    // console.log("accountInfo :>> ", accountInfo);
     console.log("accountBalances :>> ", accountBalances);
-};
+    console.log("accountBalancesUSD :>> ", accountBalancesUSD);
+};;
 
 // account info: 
 // {
