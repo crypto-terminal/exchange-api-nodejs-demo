@@ -5,9 +5,7 @@
 
 Cryptocurrency exchanges provide APIs for users. That's great. But the offcial API documentations and examples could be confusing. And most of the examples are written in Python and shell. People like me need nodejs demos.
 
-And to be frank, I know you are as lazy as I am. You don't want to RTFD. You just want to copy and paste some functional code and get it over with.
-
-This repository is great for you. 
+And to be frank, I know you don't want to RTFD. Guess what? Me neither! That's why I make thisrepository. 
 
 __Don't forget to star it after copying and pasting.__ Thanks!
 
