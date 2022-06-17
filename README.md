@@ -7,9 +7,6 @@ Cryptocurrency exchanges provide APIs for users. That's great. But the offcial A
 
 And to be frank, I know you don't want to RTFD. Guess what? Me neither! That's why I made this repository. 
 
-__Don't forget to star it after copying and pasting.__ Thanks!
-
-
 ## Usage
 
 ```javascript
